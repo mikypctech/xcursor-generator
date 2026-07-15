@@ -1,4 +1,5 @@
 # Copyright (c) 2026 mikypctech. All rights reserved.
+This repository is provided for transparency and personal use. While the source code is visible, it is proprietary property. Any redistribution, cloning, or commercial use without express permission is strictly prohibited and will be pursued.
 
 # XCursor Theme Generator
 
