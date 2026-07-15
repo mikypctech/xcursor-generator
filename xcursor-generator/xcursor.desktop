@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=xcursor Theme Generator
+Comment=Create Linux cursor themes automatically from .cur, .ani, or PNG files
+Exec=/home/scotchman/Scrivania/xcursor-generator/main.py
+Icon=/home/scotchman/Scrivania/xcursor-generator/xcursor.png
+Categories=Utility;Development;
+Terminal=false
