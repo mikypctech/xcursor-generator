@@ -17,7 +17,7 @@ jobs:
         run: |
           pip install pyinstaller
           sudo apt-get update
-          sudo apt-get install -y fuse libfuse2
+          sudo apt-get install -y libfuse2
 
       - name: Build with PyInstaller
         run: pyinstaller --onefile --name xcursor-generator --add-data "assets:assets" main.py
