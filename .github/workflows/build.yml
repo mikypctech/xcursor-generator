@@ -7,15 +7,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12' # Standard version to ensure compatibility
+          python-version: '3.12'
+
       - name: Install dependencies
-        run: pip install pyinstaller
+        run: |
+          pip install pyinstaller
+          sudo apt-get update
+          sudo apt-get install -y fuse libfuse2
+
       - name: Build with PyInstaller
         run: pyinstaller --onefile --name xcursor-generator --add-data "assets:assets" main.py
+
+      - name: Download appimagetool
+        run: |
+          wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+          chmod +x appimagetool-x86_64.AppImage
+
+      - name: Prepare AppDir
+        run: |
+          mkdir -p AppDir/usr/bin
+          cp dist/xcursor-generator AppDir/usr/bin/
+          # Create a basic AppRun (we can refine this later if needed)
+          echo '#!/bin/sh' > AppDir/AppRun
+          echo 'exec "$APPDIR/usr/bin/xcursor-generator" "$@"' >> AppDir/AppRun
+          chmod +x AppDir/AppRun
+
       - name: Build AppImage
-        uses: appimage-community/appimage-action@master
-        with:
-          args: --appdir AppDir --executable dist/xcursor-generator --output appimage
+        run: ./appimagetool-x86_64.AppImage AppDir xcursor-generator.AppImage
+        env:
+          ARCH: x86_64
