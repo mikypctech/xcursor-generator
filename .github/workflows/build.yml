@@ -30,8 +30,17 @@ jobs:
       - name: Prepare AppDir
         run: |
           mkdir -p AppDir/usr/bin
+          mkdir -p AppDir/usr/share/applications
+          mkdir -p AppDir/usr/share/icons
+
+          # Copy your binary
           cp dist/xcursor-generator AppDir/usr/bin/
-          # Create a basic AppRun (we can refine this later if needed)
+
+          # Copy desktop file and icon
+          cp xcursor.desktop AppDir/usr/share/applications/
+          cp xcursor.png AppDir/usr/share/icons/
+
+          # Create the AppRun script
           echo '#!/bin/sh' > AppDir/AppRun
           echo 'exec "$APPDIR/usr/bin/xcursor-generator" "$@"' >> AppDir/AppRun
           chmod +x AppDir/AppRun
