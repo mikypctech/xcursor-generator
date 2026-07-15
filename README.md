@@ -1,3 +1,5 @@
+# Copyright (c) 2026 mikypctech. All rights reserved.
+
 # XCursor Theme Generator
 
 A powerful, user-friendly utility designed to convert Windows cursor files (.cur, .ani) and PNG images into seamless, ready-to-use Linux XCursor themes.
