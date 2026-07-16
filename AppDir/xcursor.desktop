@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=XCursor Generator
+Exec=AppRun
+Icon=xcursor
+Type=Application
+Categories=Graphics;
+Terminal=false

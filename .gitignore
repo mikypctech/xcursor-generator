@@ -1,4 +1,9 @@
+venv/
 __pycache__/
-*.py[cod]
-.DS_Store
-*.tmp
+*.pyc
+build/
+dist/
+rpmbuild/
+*.AppImage
+*.deb
+*.rpm
