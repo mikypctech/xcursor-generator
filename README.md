@@ -45,8 +45,3 @@ A powerful, user-friendly utility designed to convert Windows cursor files (.cur
 | <img src="assets/bottom_right_corner.png" width="48"><br>**bottom_right_corner** | Resize bottom-right corner |
 | <img src="assets/forbidden.png" width="48"><br>**forbidden** | Action not allowed |
 | <img src="assets/not-allowed.png" width="48"><br>**not-allowed** | Alternative forbidden icon |
-
-## Requirements
-- PyQt6
-- win2xcur
-- Pillow
